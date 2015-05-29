@@ -1,0 +1,20 @@
+package search;
+
+import org.junit.Test;
+
+public class BinarySearchTest {
+	
+	@Test
+	public void binarySearchTest() {
+	}
+	
+	@Test
+	public void testOneElement(){
+		System.out.println("testOneElement");
+		int[] elements = {2};
+		int actualValue = 0;
+		
+		BinarySearch target = new BinarySearch();
+		actualValue = target.find(elements, 2);
+	}
+}

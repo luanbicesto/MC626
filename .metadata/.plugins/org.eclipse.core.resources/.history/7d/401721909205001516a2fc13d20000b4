@@ -1,0 +1,34 @@
+package search;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class BinarySearchTest {
+	
+	public void binarySearchTest() {
+	}
+	
+	@Test
+	public void testOneElement(){
+		System.out.println("testOneElement");
+		int[] elements = {2};
+		int actualValue = 0, expectedValue = 0;
+		
+		
+		BinarySearch target = new BinarySearch();
+		actualValue = target.find(elements, 2);
+		
+		assertEquals(expectedValue, actualValue);
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testNullArray(){
+		System.out.println("testNullArray");
+		int actualValue = 0;
+		
+		
+		BinarySearch target = new BinarySearch();
+		actualValue = target.find(null, 2);
+	}
+}

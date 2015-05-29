@@ -1,0 +1,59 @@
+package search;
+
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+public class BinarySearchTest {
+	
+	public void binarySearchTest() {
+	}
+	
+	@Test
+	public void testNoneElement(){
+		int actualValue = 0, expectedValue = -1;
+		int[] elements = {};
+		
+		System.out.println("testEmptyArray");
+		
+		BinarySearch target = new BinarySearch();
+		actualValue = target.find(elements, 2);
+		
+		assertEquals(expectedValue, actualValue);
+	}
+	
+	@Test(expected=NullPointerException.class)
+	public void testNullArray(){
+		int actualValue = 0;
+		System.out.println("testNullArray");
+		
+		BinarySearch target = new BinarySearch();
+		actualValue = target.find(null, 2);
+	}
+	
+	@Test
+	public void testOneElement(){
+		int[] elements = {1};
+		int actualValue = 0, expectedValue = 0;
+		
+		System.out.println("testOneElement");
+		
+		BinarySearch target = new BinarySearch();
+		actualValue = target.find(elements, 1);
+		
+		assertEquals(expectedValue, actualValue);
+	}
+	
+	@Test
+	public void testOnlyPositiveElements(){
+		int[] elements = {1, 2, 10, 998878};
+		int actualValue = 0, expectedValue = 2;
+		
+		System.out.println("testOnlyPositiveElements");
+		
+		BinarySearch target = new BinarySearch();
+		actualValue = target.find(elements, 10);
+		
+		assertEquals(expectedValue, actualValue);
+	}
+}
